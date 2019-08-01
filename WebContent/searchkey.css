@@ -1,0 +1,18 @@
+body{
+    background-image:url("busdet.jpg");
+    background-repeat:no-repeat;
+    background-size: 1370px 800px;
+    
+}
+table{
+	color: black;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-style: solid;
+	font-family:arial;
+	font-size:17px;
+}
+button {
+	background-color:#00ace6;
+	color:#ffff66;
+}
