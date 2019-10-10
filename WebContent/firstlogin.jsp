@@ -11,37 +11,45 @@
 <link rel="stylesheet" type="text/css" href="bus_Style.css">
 <style>
 body{
-background-image:url("login_bus.jpg");
+	background-image:url("Login_background.jpg");
+	background-repeat: no-repeat;
+	background-size: 1400px;
 }
 h2,img{
 width:100%;
 }
-container{
-opacity:0.6;
-}
 h4{
 font-weight: bolder;
+}
+.bg-img{
+	opacity:0.9;
+	margin: 30px auto;
+	width: 25%;
+	border: 3px solid #73AD21;
+	padding:20px;
+	background-color: white;
+	text-align: center;
+	position:relative;
 }
 </style>
 </head>
 <body>
 
-	 <div class="bg-img" style="opacity:0.7;">
-  <form action="logincheck.jsp">
-    <div class="container">
-     <h2><img src="logo1.jpg"></h2>
+<div class="bg-img">
+  <form action="logincheck.jsp" method="post" >
+   
      <h4>PLEASE LOGIN TO ACCESS OUR SITE</h4>
+      
+      <input type="text" placeholder="Email" name="emails" style="font-weight: bold; font-size:16px; font-family: sans-serif;"required>
+      <input type="password" placeholder="Password" style="font-weight:bold; font-size:16px;" name="psws"required>
 
-      <label for="emails"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="emails" style="font-weight: bold; font-size:15px; font-family: sans-serif;"required>
-
-      <label for="psws"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psws"required>
-
-      <input type="submit" class="btn" value="Login"><br><br>
-      <a href="signin.html" class="btn">Sign Up</a>
-      </form>
-</div>
-</form>
+      <input type="submit" class="btn" value="Login"><br>
+      <br>
+      <p style="padding:0px;"><b>New User? <a href="signin.html">Register</a></b></p>
+      
+      <!--<a href="signin.html" class="btn">Sign Up</a>
+       </div> -->
+  </form>
+ </div>
 </body>
 </html>

@@ -18,7 +18,7 @@
 		try
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");//REGISTER FOR JDBC DRIVER
-			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
 			Statement st=con.createStatement();
 			String sql;
 			sql="SELECT * from userinfo where email='"+email+"'and password='"+password+"'";

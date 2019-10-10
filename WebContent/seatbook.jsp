@@ -12,7 +12,13 @@
 <link href="css\bootstrap.css" type="text/css" rel="stylesheet" >
 <script src="js\jquery-3.3.1.js"></script>
 <script src="js\bootstrap.js"></script>
-<link rel="stylesheet" type="text/css" href="searchkey.css">
+<link rel="stylesheet" type="text/css" href="seatbook.css">
+<Style>
+tr{
+	border:4px solid black;
+}
+
+</Style>
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -38,9 +44,6 @@
           </ul>
         </li>
         <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">BOOKING INFORMATION</a></li>
-		<li><a href="#">PACKAGES & PROMOTIONS</a></li>
-		<li><a href="#">BOOK NOW</a></li>
 		<li><a href="#">CONTACT US</a></li>
       </ul>
       
@@ -50,7 +53,7 @@
 <% 
 try {
 	Class.forName("oracle.jdbc.driver.OracleDriver");
-	Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
+	Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
 	Statement st=con.createStatement();
 	String src,dest;
 	src=request.getParameter("src");
@@ -61,11 +64,14 @@ try {
 	ResultSet rs=st.executeQuery(sql);
 	
 	%>
-	<table border=2 cellpadding='10' CLASS="table table-bordered" ><tr><th>BUS ID</th><th>BUS NAME</th><th>SOURCE</th><th>DESTINATION</th><th>PRICE</th><th>TIMINGS</th></tr>
+	<table style="text-align:center;" class="table table-bordered" ><tr><th>BUS ID</th><th style="padding-left:100px;">BUS NAME</th>
+	<th style="padding-left:50px;">SOURCE</th><th style="padding-left:50px;">DESTINATION</th>
+	<th>PRICE</th><th>TIMINGS</th></tr>
+	
 	<%while(rs.next())
 	{
 		out.print("<tr><td>"+rs.getString(1)+"</td> <td> "+rs.getString(2)+" </td><td>  "+rs.getString(3)+"</td><td>  "+rs.getString(4)+"</td> <td> "
-	+rs.getString(5)+" </td><td> "+rs.getString(6)+"</td>");
+		+rs.getString(5)+" </td><td> "+rs.getString(6)+"</td>");
 		
 		out.print("<td><a href='logindisplay.jsp?b_id="+rs.getString(1)+"' class='btn btn-info btn-lg'>SELECT SEAT</a></td>");
 		
@@ -81,6 +87,6 @@ try {
 		e.printStackTrace();
 	}
 	 %>
-	 
+	 <img src="busoffer.jpg" alt="Avatar" style="width:50%;margin-left:25%;padding:8px;">
 </body>
 </html>

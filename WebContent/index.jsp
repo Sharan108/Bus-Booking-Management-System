@@ -11,6 +11,13 @@
 <link rel="stylesheet" type="text/css" href="bus_Style.css">
 
 <style>
+
+body{
+	background-image: url("Main_background.jpg");
+    background-repeat: no-repeat;
+    background-size: 1370px 600px;
+ }
+    
 * {
     box-sizing: border-box;
 }
@@ -48,6 +55,18 @@
  left-margin:50px;
  }
 
+.location{
+	opacity:0.8;
+	margin: 30px auto;
+	width: 50%;
+	padding:20px;
+	background-color: white;
+	text-align: center;
+}
+.column
+{
+	height:320px;
+}
 </style>
 </head>
 <body>
@@ -68,16 +87,15 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">TOURIST PLACES <span class="caret"></span></a>
           <ul class="dropdown-menu divider">
-            <li><a href="ahemdabad.html">AHEMDABAD</a></li>
+        
+            <li><a href="Tourist/ahemdabad.html">GUJARAT</a></li>
             <li><a href="#">BANGALORE</a></li>
             <li><a href="#">MUMBAI</a></li>
-    
+    		<li><a href="#"></a></li>
+    		<li><a href="#">MUMBAI</a></li>
           </ul>
         </li>
         <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">BOOKING INFORMATION</a></li>
-		<li><a href="offers.html">PACKAGES & PROMOTIONS</a></li>
-		<li><a href="#">BOOK NOW</a></li>
 		<li><a href="contact.jsp">CONTACT US</a></li>
       </ul>
       
@@ -85,61 +103,48 @@
   </div>
 </nav>
    
-     <div class="row">
-     <form action="seatbook.jsp">
-                    <div class="col-lg-4">
-                                          <h1>Source</h1>
-                                          
-                                          <input type="text" class="form-control" name="src" style="opacity:0.7;color:blue;">
-                    </div>
-                       <div class="col-lg-2">
-                                          <h1 style="width:100%">--------------</h1>
-                                        <h1 style="width:100%">--------------</h1>
-                                          
-                    </div>                                                         
-  <div class="col-lg-4">
-                                          <h1>Destination</h1>
-                                          <input type="text" class="form-control" name="dest" style="opacity:0.7;color:blue;">
-                    </div>
-                                                                                                               
-               <div class="col-lg-2" style="margin-top:40px;">
-               
-                               <input type="submit" class="btn btn-info" value="search">
-                                          
-                    </div>    
-                 </form>
-    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="location">
+    <form action="seatbook.jsp">
+    	<input type="text" placeholder="From" name="src" style="font-weight: bold; font-size:16px; font-family: sans-serif;width: 30%"required>
+  		<img src="bus_icon.png" alt="Snow" style="width:15%; height:70px;margin:10px;">
+      	<input type="text" placeholder="To" style="font-weight:bold; font-size:16px;width: 30%" name="dest"required><br>
+   		<input type="submit" class="btn btn-info" value="Search" style="width:20%"><br>
+      <br>
+    </form>
+    </div>
     
+    
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="rows">
-  <div class="columns" style="background-color:white;">
-   <img src="promise.jpg" alt="Snow" style="width:20%;height:110px;width=87px;margin-left: auto;margin-right:auto;display:block;padding-left:100px;padding-top:10px;">
+  <div class="columns" style="background-color:#ffb74d;text-align:center">
+   <img src="promise.jpg" alt="Snow" style="width:10%;height:110px;display:block;margin:0 auto;padding:5px;">
 
    </div>
     
     
     
-<div class="row">
-  <div class="column" style="background-color:white;">
+<div class="row" style="height: 100px">
+  <div class="column" style="background-color:#B2EBF2;">
     <h3>MAXIMUM CHOICE</h3><br>
     <img src="offerpic3.jpg" alt="Snow" style="width:70%; padding-left:100px; height:100px;"><br>
     <h4>We give you the widest number of travel options across thousands of routes..</h4>
   </div>
-  <div class="column" style="background-color:azure;">
+  <div class="column" style="background-color:#69F0AE;">
     <h3>SUPERIOR CUSTOMER SERVICE</h3><br>
      <img src="offerpic2.jpg" alt="Snow" style="width:60%; padding-left:100px;"><br>
     <h4>We put our experience and relationships to good use and are available to solve your travel issues.</h4>
   </div>
-  <div class="column" style="background-color:white;">
+  <div class="column" style="background-color:#FFF9C4;">
     <h3>LOWEST PRICES</h3><br>
     <img src="offerpic1.jpg" alt="Snow" style="width:70%; padding-left:100px; height:100px;"><br>
     <h4>We always give you the lowest price with the best partner offers.</h4>
   </div>
-  <div class="column" style="background-color:azure;">
+  <div class="column" style="background-color:#FFCCBC;">
     <h3>UNMATCHED BENEFITS</h3><br>
     <img src="offerpic4.jpg" alt="Snow" style="width:70%; padding-left:100px; height:100px;"><br>
     <h4>We take care of your travel beyond ticketing by providing you with innovative and unique benefits.</h4>
   </div>
 </div>
-
  </body>
 </html>

@@ -16,7 +16,7 @@
 	String password=request.getParameter("psw");
 	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
 		Statement st=con.createStatement();
 		String sql;
 		sql="INSERT INTO userinfo VALUES('"+name+"','"+email+"','"+password+"')";

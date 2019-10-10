@@ -28,6 +28,8 @@ font-size: large;
 </style>
 </head>
 <body>
+
+<div style="margin:10 auto;text-align: center;">
 <h1>YOUR BOOKING HAS BEEN CONFIRMED..</h1>
 <div>
 <p>
@@ -39,8 +41,6 @@ font-size: large;
 	}
 </script>
 <h2>BOOKING DETAILS ARE:</h2>
- </p> 
- 
  <%
 int count=0;
 for(int i=1;i<=45;i++)
@@ -57,11 +57,11 @@ for(int i=1;i<=45;i++)
 		//out.print(s);	
 		try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
 		Statement st=con.createStatement();
 		String sql;
 		sql="INSERT INTO  passenger_details VALUES('"+name+"','"+s+"','"+n+"')";
-		out.print("<table border=2 cellpadding='10';><tr><th>Passenger Name</th><th>Seat Number</th><th>Bus Name</th></tr>");
+		out.print("<table border=2 align:center<tr><th>Passenger Name</th><th>Seat Number</th><th>Bus Name</th></tr>");
 		out.print("<tr><td>"+name+"</td> <td> "+s+" </td><td>  "+n+"</td></tr>");
 		//out.print(sql);
 		int x=st.executeUpdate(sql);
@@ -85,6 +85,7 @@ else
 	out.print("not");	
 }
 %>
+</div>
 </div>
 </body>
 </html>

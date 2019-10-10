@@ -12,11 +12,10 @@
 <link href="css\bootstrap.css" type="text/css" rel="stylesheet" >
 <Style>
 body{
-	background-color:#cce6ff;
+	background-color:#ffcc80;
 	}
 h2{
 	font-weight: bold;
-	text-decoration: underline;
 	
 }
 </Style>
@@ -50,15 +49,19 @@ function totalprice()
 </script>
 </head>
 <body>
-<form action="book.jsp" method="get">     <h2> Choose seats by clicking the corresponding seat in the layout below:</h2>
-<div  style="height:300px;width:1000px;background-color:orange;border-radius: 25px; border: 3px solid black;">
+<form action="book.jsp" method="get" style="text-align:center">     
+<h2 style="margin:20px;"> Choose seats by clicking the corresponding seat in the layout below:</h2>
+<div  style="height:280px;width:1040px;background-color:orange;border-radius: 25px; border: 3px solid black;
+	margin:0 auto;">
 <%
- 	for(int i=1;i<=45;i++)
+ 	for(int i=1;i<=42;i++)
  	{
  		String seat="s";
 		seat=seat.concat(Integer.toString(i));
- 		if(i==24)
- 			out.print("<br><br><br><br>");
+ 		if(i==22)
+ 		{
+ 			out.print("<br><br><br>");
+ 		}	
  		
  	%>
  	<img src="available_seat_img.gif" height="50px" width="50px"><input type="checkbox" onchange="totalprice()" name=<%out.print(seat);%>  value='s<%=i %>'>s <%=i %>
@@ -67,14 +70,13 @@ function totalprice()
 %>
 </div>    
 <br>
-<div style="background-color:tomato;height:200px;width:1000px;">
-
+<div style="height:200px;width:50%;margin:0 auto">
 <%
       try
 	{
     	 String b_id= request.getParameter("b_id");
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
 		Statement st=con.createStatement();
 		String sql;
 		sql="SELECT * from bus_details where bus_id="+b_id;
@@ -89,12 +91,14 @@ function totalprice()
   		catch(Exception e)
   		{e.printStackTrace();}
     %>
-    
+    <div style="background-color:floralwhite;width:50%;margin:0 auto;border: 3px solid black;">
     <input type="hidden" id=pr name="price">
     <h2> Price: <span id="n3"></span></h2>
-    <h2>Quantity: <span id="n2"></span></h2>
-    <h2>Total Price: <span id="n1"></span><td><input type="submit" value="BOOK NOW"class="btn btn-info btn-lg"></td></h2>
-  
+    <h2>Number of Seats: <span id="n2"></span></h2>
+    <h2 style:"margin:20px;">Total Price: <span id="n1"></span><td><br><br>
+    <input style:"margin:20px;" type="submit" value="BOOK NOW"class="btn btn-info btn-lg"
+    ></td></h2>
+  </div>
         
       </form>
 </body>

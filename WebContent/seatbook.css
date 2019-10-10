@@ -1,7 +1,5 @@
 body{
-    background-image:url("busdet.jpg");
-    background-repeat:no-repeat;
-    background-size: 1370px 800px;
+    background-color:#ffb74d;
     
 }
 table{
@@ -11,6 +9,8 @@ table{
 	border-style: solid;
 	font-family:arial;
 	font-size:17px;
+	text-align:center;
+	border:4px black;
 }
 button {
 	background-color:#00ace6;

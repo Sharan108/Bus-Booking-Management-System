@@ -78,7 +78,7 @@ input[type=submit]:hover {
   </div>
 </nav>
 	<div class="container">
-  <form action="action_page.php">
+ <form action="https://formspree.io/sharanchhibber108@gmail.com@domain.tld" method="POST">
 
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
@@ -99,6 +99,7 @@ input[type=submit]:hover {
     <input type="submit" value="Submit">
 
   </form>
+  
 </div>
 </body>
 </html>
